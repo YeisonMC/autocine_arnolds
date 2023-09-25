@@ -31,8 +31,9 @@
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz9YMFCMoayMJUAjU_oLnIQD0hpDx6HkI80A&usqp=CAU"
       alt=""
     />
-    <h2 th:text="${venta}" class="cartelera"></h2>
+    <h2 th:text="${listarCatelera}"></h2>
     <br />
+    <p th:text="${titulo}" class="card-title"></p>
     <footer th:replace="plantilla/template::footer"></footer>
   </body>
 </html>
