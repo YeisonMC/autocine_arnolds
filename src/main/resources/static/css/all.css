@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap");
+
+/*******************************************************************************/
+/****************************** ETIQUETAS GENERALES ****************************/
+/*******************************************************************************/
+
 * {
   padding: 0;
   margin: 0;
@@ -8,31 +14,226 @@ a {
   text-decoration: none;
 }
 
-.color-base {
-  background-color: rgb(31, 39, 101);
+:root {
+  --color-base: rgb(31, 39, 101);
+  --color-white: white;
 }
 
-.header-sub {
-  width: 90%;
+header,
+footer {
+  background-color: var(--color-base);
+}
+
+.color-base {
+  color: var(--color-base);
+}
+
+/*******************************************************************************/
+/****************************** HEADER *****************************************/
+/*******************************************************************************/
+.header-title {
+  /* background-color: antiquewhite; */
+  margin-right: 5.5em;
+  color: var(--color-white);
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+}
+
+.espacio-formato {
+  width: 60%;
   margin: auto;
 }
 
 .header-a {
-  color: white;
-  font-weight: 700;
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .user-icon {
   font-size: 2em;
-  color: white;
+  color: var(--color-white);
+  padding-left: 0.2em;
 }
 
-.footer-div {
-  text-align: center;
+/* BUSCADOR */
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 200px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #97979b;
+  font-size: 13px;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px) */
+@media (max-width: 767px) {
+  .header-title {
+    margin-right: 0.5rem;
+  }
+  .espacio-formato {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .header-a {
+    font-size: 14px;
+  }
+  .user-icon {
+    font-size: 1.5em;
+  }
+  .input-group {
+    width: 100%;
+  }
+  .input {
+    padding: 0.5rem;
+    padding-left: 2rem;
+  }
+}
+
+/* Estilos para pantallas medianas (entre 768px y 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-title {
+    margin-right: 0.5rem;
+  }
+  .espacio-formato {
+    width: 90%;
+    padding: 0.5rem;
+  }
+  .header-a {
+    font-size: 14px;
+  }
+  .user-icon {
+    font-size: 1.5em;
+  }
+  .input-group {
+    width: 100%;
+  }
+  .input {
+    padding: 0.5rem;
+    padding-left: 2rem;
+  }
+}
+
+/*******************************************************************************/
+/****************************** FOOTER *****************************************/
+/*******************************************************************************/
+
+/* .footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .footer-div a {
-  color: white;
+  color: var(--color-white);
   font-size: 14px;
   line-height: 16px;
+  margin-left: 0.8em;
+}
+
+.footer-div-redes i {
+  font-size: 40px;
+  color: var(--color-white);
+} */
+
+/* Estilos generales para el footer */
+.footer {
+  background-color: var(--color-base);
+  color: var(--color-white);
+  padding: 1rem 0;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: end;
+}
+
+/* Estilos para los enlaces del footer */
+.footer-links a {
+  color: var(--color-white);
+  margin-right: 1rem;
+  font-size: 14px;
+  display: block;
+}
+
+/* Estilos para los íconos de redes sociales */
+.footer-social i {
+  font-size: 35px;
+  color: var(--color-white);
+  margin-right: 10px;
+}
+
+/* Estilos para dispositivos pequeños (tabletas y móviles) */
+@media (max-width: 768px) {
+  .footer-flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-links {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-links a {
+    margin: 0 0.5rem;
+  }
+
+  .footer-social {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Estilos para dispositivos muy pequeños (móviles) */
+@media (max-width: 576px) {
+  .footer-flex {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-links a {
+    font-size: 12px;
+    margin: 0.3rem;
+  }
+
+  .footer-social i {
+    font-size: 28px;
+  }
 }

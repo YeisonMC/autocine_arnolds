@@ -1,6 +1,71 @@
+/*******************************************************************************/
+/****************************** HEADER *****************************************/
+/*******************************************************************************/
+
 .cartelera {
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* .sid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+} */
+
+/* .elemento {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+} */
+
+#carrusel {
+  width: 82%; /* Ajusta el ancho del carrusel según tus necesidades */
+  margin: 1em 0; /* Centra el carrusel horizontalmente */
+}
+
+.product {
+  /* margin: 10px; Agrega márgenes alrededor de cada imagen */
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 27%; /* Centra verticalmente las flechas */
+  transform: translateY(-50%); /* Alinea verticalmente las flechas */
+}
+.icon-flecha {
+  width: 30px;
+  height: 30px;
+}
+
+.left-arrow {
+  left: 18%; /* Coloca la flecha izquierda a 10px del borde izquierdo */
+}
+
+.right-arrow {
+  right: 29%; /* Coloca la flecha derecha a 10px del borde derecho */
+}
+
+.carrusel img {
+  width: 179px;
+  height: 268px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.3em;
+  margin-bottom: 0.7em;
+}
+
+.carrusel-titulo {
+  text-align: center;
+  font-size: 15px;
+}
+
+.propaganda {
+  width: 940px;
+  max-width: 100%;
+  height: auto;
 }

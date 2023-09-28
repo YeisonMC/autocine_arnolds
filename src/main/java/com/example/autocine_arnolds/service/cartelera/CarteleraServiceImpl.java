@@ -1,5 +1,6 @@
 package com.example.autocine_arnolds.service.cartelera;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class CarteleraServiceImpl implements CarteleraService{
     private CarteleraRepository carteleraRepository;
 
     @Override
-    public List<Cartelera> listarCatelera() {
-        return (List<Cartelera>) carteleraRepository.findAll();
+    public ArrayList<Cartelera> listarCatelera() {
+        return (ArrayList<Cartelera>) carteleraRepository.findAll();
     }
 
     @Override

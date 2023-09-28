@@ -21,10 +21,10 @@
     ></script>
   </head>
   <body>
-    <header th:fragment="header" class="header color-base">
-      <nav class="navbar navbar-expand-lg header-sub">
+    <header th:fragment="header" class="header">
+      <nav class="navbar navbar-expand-lg espacio-formato">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand header-title" href="#">Autocine Arnolds</a>
           <button
             class="navbar-toggler bg-light"
             type="button"
@@ -39,24 +39,27 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link header-a" aria-current="page" href="#"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item">
                 <a class="nav-link header-a" href="#">Peliculas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link header-a" href="#">Cines</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
+            <form class="d-flex header-buscador" role="search">
+              <div class="group">
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <g>
+                    <path
+                      d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                    ></path>
+                  </g>
+                </svg>
+                <input
+                  placeholder="Peliculas, Cine y más...."
+                  type="search"
+                  class="input"
+                />
+              </div>
               <i class="uil uil-user-circle user-icon"></i>
             </form>
           </div>
@@ -64,13 +67,41 @@
       </nav>
     </header>
 
-    <footer th:fragment="footer" class="footer color-base">
-      <div class="footer-div">
-        <a href="">Sobre nosotros</a>
-        <a href="">Contacto</a>
-        <a href="">Términos y condiciones</a>
-        <a href="">Privacidad</a>
-        <a href="">Tarjeta regalo</a>
+    <!-- <footer th:fragment="footer" class="footer">
+      <div class="footer-div espacio-formato">
+        <div class="footer-div-flex">
+          <a href="">Sobre nosotros</a>
+          <a href="">Contacto</a>
+          <a href="">Términos y condiciones</a>
+          <a href="">Privacidad</a>
+          <a href="">Tarjeta regalo</a>
+        </div>
+        <div class="footer-div-redes">
+          <i class="uil uil-facebook"></i>
+          <i class="uil uil-twitter"></i>
+        </div>
+      </div>
+    </footer> -->
+    <footer th:fragment="footer" class="footer">
+      <div class="espacio-formato">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="footer-links">
+              <a href="">Sobre nosotros</a>
+              <a href="">Contacto</a>
+              <a href="">Términos y condiciones</a>
+              <a href="">Privacidad</a>
+              <a href="">Tarjeta regalo</a>
+            </div>
+          </div>
+          <div class="col-md-6 footer-flex">
+            <div class="footer-social">
+              <i class="uil uil-facebook"></i>
+              <i class="uil uil-twitter"></i>
+              <i class="uil uil-whatsapp"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
