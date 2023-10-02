@@ -43,13 +43,8 @@
     <header th:replace="plantilla/template::header"></header>
     <br />
     <div class="espacio-formato">
+      <a th:href="@{/cartelera/}">asdas</a>
       <h2 th:text="${cartelera}" class="cartelera color-base"></h2>
-   
-      <!-- <h1>Hola 😱🥺🙀</h1> -->
-      <!-- <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz9YMFCMoayMJUAjU_oLnIQD0hpDx6HkI80A&usqp=CAU"
-        alt=""
-      /> -->
       <div id="carrusel">
         <a href="#" class="left-arrow">
             <img src="/img/flecha-mayor.png" class="icon-flecha" />
@@ -59,51 +54,52 @@
         </a>
         <div class="carrusel">
             <div th:each="listarCatelera : ${listarCatelera}" class="product">
-                <a th:href="@{'/enlace/' + ${listarCatelera.id}}" class="carrusel-item">
+              <!-- <p th:text="${listarCatelera.id}"></p> -->
+                <a th:href="@{/cartelera/get/{id}(id=${listarCatelera.id})}"class="carrusel-item">
                     <img th:src="${listarCatelera.imagen}" />
                     <p th:text="${listarCatelera.titulo}" class="carrusel-titulo"></p>
                     <!-- <p th:text="${listarCatelera.descripcion}"></p> -->
                 </a>
             </div>
         </div>
+      </div>
+      <h2 th:text="${venta}" class="cartelera color-base"></h2>
+      <!-- <div id="carrusel">
+        <a href="#" class="left-arrow">
+            <img src="/img/flecha-mayor.png" class="icon-flecha" />
+        </a>
+        <a href="#" class="right-arrow">
+            <img src="/img/flecha-menor.png" class="icon-flecha" />
+        </a>
+        <div class="carrusel">
+            <div th:each="listarCatelera : ${listarCatelera}" class="product">
+                <a th:href="@{'/cartelera/enlance' + ${listarCatelera.id}}" class="carrusel-item">
+                    <img th:src="${listarCatelera.imagen}" />
+                    <p th:text="${listarCatelera.titulo}" class="carrusel-titulo"></p>
+                </a>
+            </div>
+        </div>
+      </div> -->
     </div>
-      <a href="#">
+      <!-- <a href="#">
         <img src="/img/a.png" alt="propaganda" class="propaganda">
-      </a>
-    </div>
+      </a> -->
+
+      
+   
     <!-- <h2 th:text="${listarCatelera}"></h2> -->
     <br />
     <p th:text="${titulo}" class="card-title"></p>
 
 
 
-     
-        <!-- <div class="cabeza">
-          <div id="carrusel">
-            <a href="#" class="left-arrow"
-              ><img src="images/left-arrow.png"
-            /></a>
-            <a href="#" class="right-arrow"
-              ><img src="images/right-arrow.png"
-            /></a>
-            <div class="carrusel">
-              <div th:each="listarCatelera : ${listarCatelera}" class="product">
-                <img th:src="${listarCatelera.imagen}" />
-                <h5 th:text="${listarCatelera.titulo}"></h5>
-                <p th:text="${listarCatelera.descripcion}"></p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Agrega los scripts de jQuery y Slick Carousel -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Inicializa el carrusel -->
 
         <br /><br /><br /><br /><br /><br />
-        <footer th:replace="plantilla/template::footer"></footer>
+    <footer th:replace="plantilla/template::footer"></footer>
       </body>
     </html>
   </body>

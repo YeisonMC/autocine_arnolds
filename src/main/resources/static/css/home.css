@@ -69,3 +69,47 @@
   max-width: 100%;
   height: auto;
 }
+/* @media (max-width: 991px) {
+  .espacio-formato {
+    background-color: aqua;
+    width: 230%;
+    margin: auto;
+  }
+  #carrusel {
+    background-color: bisque;
+    width: 100%;
+    margin: 1em auto;
+  }
+  .left-arrow,
+  .right-arrow {
+    position: absolute;
+    top: 27%;
+    transform: translateY(-50%);
+  }
+  .icon-flecha {
+    width: 30px;
+    height: 30px;
+  }
+
+  .left-arrow {
+    left: 18%;
+  }
+
+  .right-arrow {
+    right: 29%;
+  }
+
+  .carrusel img {
+    width: 329px;
+    height: 238px;
+    max-width: 100%;
+
+    border-radius: 0.3em;
+    margin-bottom: 0.7em;
+  }
+
+  .carrusel-titulo {
+    text-align: center;
+    font-size: 15px;
+  }
+} */
