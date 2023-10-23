@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arnolds | Peliculas</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/peliculas.css" />
+    <script src="/js/peliculas.js"></script>
+    <link rel="shortcut icon" href="/img/icon-pagina.ico" />
+  </head>
+  <body>
+    <header th:replace="plantilla/template::header"></header>
+    <nav>
+      <section class="espacio-formato">
+        <br />
+        <div class="container-inicial-titulo">
+          <h2 class="titulo">Películas</h2>
+          <hr class="mb-0 titulo-hr" />
+        </div>
+        <br />
+        <div class="containess">
+          <div class="dropdown filtro-dropdown">
+            <button
+              class="estilos-boton-filtro dropdown-toggle button-name"
+              role="button"
+              type="button"
+              id="dropdownFiltro"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Filtro
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFiltro">
+              <li>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="chkCartelera"
+                    name="grupoFiltro"
+                  />
+                  <label class="form-check-label" for="chkCartelera"
+                    >Cartelera</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="chkProximamente"
+                    name="grupoFiltro"
+                  />
+                  <label class="form-check-label" for="chkProximamente"
+                    >Próximamente</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="chkAdministrador"
+                    name="grupoFiltro"
+                  />
+                  <label class="form-check-label" for="chkAdministrador"
+                    >Administrador</label
+                  >
+                </div>
+              </li>
+              <li class="divider"></li>
+              <div class="d-flex container-bottones justify-content-between">
+                <li>
+                  <button
+                    id="btnEliminarFiltro"
+                    class="btn btn-outline-secondary estilos-botones"
+                  >
+                    ELIMINAR
+                  </button>
+                </li>
+                <li>
+                  <button id="btnAplicar" class="btn estilos-botones">
+                    Aplicar
+                  </button>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ***************** CONTENIDO GENERAL ***************** -->
+
+        <div class="contenido" id="contenidoFiltro">
+          <!-- <div class="containers">
+            <div th:each="peliculas : ${peliculas}" class="cards">
+              <a th:href="@{/pages/proximamente/{id}(id=${peliculas.id})}">
+                <div class="car-img">
+                  <img
+                    class="img-fluid"
+                    th:src="${peliculas.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <div class="card-content-p">
+                  <p th:text="${peliculas.titulo}"></p>
+                </div>
+              </a>
+            </div>
+          </div> -->
+          <div class="containers">
+            <div
+              th:each="listarProximamenteRandom : ${listarProximamenteRandom}"
+              class="cards"
+            >
+              <a
+                th:href="@{/pages/proximamente/{id}(id=${listarProximamenteRandom.id})}"
+              >
+                <!-- <a th:href="@{'/pelicula/' + ${pelicula.id}}"> -->
+                <div class="car-img">
+                  <img
+                    th:src="${listarProximamenteRandom.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <div class="card-content-p">
+                  <p th:text="${listarProximamenteRandom.titulo}"></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="containers">
+            <div
+              th:each="listarCateleraRandom : ${listarCateleraRandom}"
+              class="cards"
+            >
+              <a th:href="@{/pages/get/{id}(id=${listarCateleraRandom.id})}">
+                <!-- <a th:href="@{'/pelicula/' + ${pelicula.id}}"> -->
+                <div class="car-img">
+                  <img
+                    th:src="${listarCateleraRandom.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <p
+                  th:text="${listarCateleraRandom.titulo}"
+                  class="titulo-pelicula"
+                ></p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ***************** CONTENIDO CARTELERA ***************** -->
+
+        <div class="contenido" id="contenidoCartelera" style="display: none">
+          <!-- <p>Este es el contenido de la cartelera.</p> -->
+          <!-- <a class="btn btn-secondary" th:href="@{/pages/subpaginas/create}"
+            >Crear</a
+          > -->
+          <div class="containers">
+            <div th:each="listarCatelera : ${listarCatelera}" class="cards">
+              <a th:href="@{/pages/get/{id}(id=${listarCatelera.id})}">
+                <!-- <a th:href="@{'/pelicula/' + ${pelicula.id}}"> -->
+                <div class="car-img">
+                  <img
+                    th:src="${listarCatelera.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <p
+                  th:text="${listarCatelera.titulo}"
+                  class="titulo-pelicula"
+                ></p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ***************** CONTENIDO PROXIMAMENTE ***************** -->
+
+        <div class="contenido" id="contenidoProximamente" style="display: none">
+          <!-- <p>Este es el contenido de próximamente.</p> -->
+          <!-- <button id="btnRetroceder">Retroceder</button> -->
+
+          <div class="containers">
+            <div
+              th:each="listarProximamente : ${listarProximamente}"
+              class="cards"
+            >
+              <a
+                th:href="@{/pages/proximamente/{id}(id=${listarProximamente.id})}"
+              >
+                <!-- <a th:href="@{'/pelicula/' + ${pelicula.id}}"> -->
+                <div class="car-img">
+                  <img
+                    th:src="${listarProximamente.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <div class="card-content-p">
+                  <p th:text="${listarProximamente.titulo}"></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ***************** CONTENIDO ADMINISTRADOR ***************** -->
+
+        <div
+          class="contenido"
+          id="contenidoAdministrador"
+          style="display: none"
+        >
+          <!-- <p>Este es el contenido de la administrador.</p> -->
+
+          <a th:href="@{/pages/subpaginas/create}">
+            <button class="botton-crear">Crear</button>
+          </a>
+          <br />
+          <br />
+          <!-- <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknHdFtxrAqlOEPinfV0sFgzKqhc8fVHIYuTSL8_HEuMspl_VGCubBJDbbtXTvIKS1JVI&usqp=CAU"
+            alt=""
+          /> -->
+          <div class="containers">
+            <div th:each="listarCatelera : ${listarCatelera}" class="cards">
+              <a>
+                <div class="car-img">
+                  <img
+                    th:src="${listarCatelera.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <p th:text="${listarCatelera.titulo}"></p>
+                <a
+                  class="btn btn-success"
+                  th:href="@{/pages/subpaginas/edit/} + ${listarCatelera.id}"
+                  th:text="Editar"
+                  title="Editar Registro"
+                ></a>
+                <a
+                  class="btn btn-danger espacio-boton"
+                  th:href="@{/pages/subpaginas/delete/} + ${listarCatelera.id}"
+                  th:text="Elimnar"
+                  title="Elimnar"
+                ></a>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="containers">
+            <div
+              th:each="listarProximamente : ${listarProximamente}"
+              class="cards"
+            >
+              <a
+                th:href="@{/pages/proximamente/{id}(id=${listarProximamente.id})}"
+              >
+        
+                <div class="car-img">
+                  <img
+                    th:src="${listarProximamente.imagen}"
+                    alt="Imagen de película"
+                  />
+                </div>
+                <div class="card-content-p">
+                  <p th:text="${listarProximamente.titulo}"></p>
+                </div>
+              </a>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="container-botton"></div>
+      </section>
+    </nav>
+    <br /><br />
+    <footer th:replace="plantilla/template::footer"></footer>
+  </body>
+</html>

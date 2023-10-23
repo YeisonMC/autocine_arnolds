@@ -1,0 +1,33 @@
+textarea {
+  height: 200px;
+  max-height: 280px;
+}
+
+.botton-guardar {
+  background-color: var(--color-botton);
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 10em;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+
+.botton-guardar:active {
+  color: white;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+}
+
+.botton-guardar:hover:not(:disabled) {
+  background: #b49e2c;
+  color: white;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.botton-guardar:disabled {
+  cursor: auto;
+  color: grey;
+}

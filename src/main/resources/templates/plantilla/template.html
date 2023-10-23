@@ -24,7 +24,9 @@
     <header th:fragment="header" class="header">
       <nav class="navbar navbar-expand-lg espacio-formato">
         <div class="container-fluid">
-          <a class="navbar-brand header-title" href="#">Autocine Arnolds</a>
+          <a class="navbar-brand header-title" th:href="@{/}"
+            >Autocine Arnolds</a
+          >
           <button
             class="navbar-toggler bg-light"
             type="button"
@@ -39,10 +41,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link header-a" href="#">Peliculas</a>
+                <a
+                  class="nav-link header-a"
+                  th:href="@{/pages/subpaginas/peliculas}"
+                  >Peliculas</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link header-a" href="#">Cines</a>
+                <a class="nav-link header-a" th:href="@{/pages/cines/cine}"
+                  >Cines</a
+                >
               </li>
             </ul>
             <form class="d-flex header-buscador" role="search">
@@ -58,6 +66,7 @@
                   placeholder="Peliculas, Cine y más...."
                   type="search"
                   class="input"
+                  id="search-input"
                 />
               </div>
               <i class="uil uil-user-circle user-icon"></i>

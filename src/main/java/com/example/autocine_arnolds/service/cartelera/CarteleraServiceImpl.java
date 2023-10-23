@@ -31,6 +31,6 @@ public class CarteleraServiceImpl implements CarteleraService{
     @Override
     public void eliminarCarteleraId(Long id) {
        carteleraRepository.deleteById(id);
-    }
-    
+    } 
 }
+ 

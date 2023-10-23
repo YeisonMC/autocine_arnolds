@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text=" 'Arnolds | ' +${nombrePelicula}"> </title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="/js/card.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/detalleCatelera.css" />
+    <script src="/js/video.js"></script>
+    <link rel="shortcut icon" href="/img/icon-pagina.ico" />
+  </head>
+  <body>
+    <!-- <script th:inline="javascript">
+      var videoUrl = "${proximamente.descripcion}";
+     </script> -->
+    <header th:replace="plantilla/template::header"></header>
+    <br>
+      <nav class="espacio-formato">
+      <div class="row">
+        <div class="col-md-12 columa1">
+            <div class="container-columna1">
+                  <div class="flex">
+                      <div class="container-columna1-flex">
+                          <img
+                          th:src="${proximamente.imagen}"
+                            alt=""
+                            class="img-fluid"
+                          />
+                          <div class="d-flex justify-content-center p-2 container-botton">
+                              <button class="button"> <i class="fas fa-ticket-alt "></i> Entradas</button>
+                              <button id="open-video" class="button2 espacio-botton"> <i class="fas fa-play"></i> Trailer</button>
+                              <div id="video-popup" class="popup">
+                                <div class="popup-content">
+                                  <span id="close-video" class="close-popup">&times;</span>
+                                  <iframe
+                                    id="video-iframe"
+                                    th:src="${proximamente.iframe_url}"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                  ></iframe>
+                                </div>
+                              </div>
+                             
+                           </div>
+                           <br>
+                          <div class="pruenas">
+                            <p class="proximamente cartelera color-base">INFORMACIÓN:</p>
+                            <div class="container-informacion">
+                              <p class="informacion-titulo">DIRECTOR/A</p>
+                              <p class="informacion-p" th:text="${proximamente.director}"></p>
+                              <p class="informacion-titulo">DURACIÓN</p>
+                              <p class="informacion-p" th:text="${proximamente.duracion}"></p>
+                              <p class="informacion-titulo">FECHA DE ESTRENO</p>
+                              <p class="informacion-p" th:text="${proximamente.fecha_estreno}"></p>
+                              <p class="informacion-titulo">GÉNERO</p>
+                              <p class="informacion-p" th:text="${proximamente.genero}"></p>
+                             
+                            </div>
+                          </div>
+
+                      </div>
+              </div>
+          </div>
+          <div class="container-columna2 ">
+              <h2 th:text="${proximamente.titulo}" class="titulo-pelicula"></h2>
+                    <div class="d-flex">
+                      <p th:text="${proximamente.duracion}"></p>
+                      <div class="line">
+                        <span class="border-end border-3 border-warning-subtle"> </span>
+                      </div>
+                      <p th:text="${proximamente.genero}">
+                        Drama
+                      </p>
+                      <div class="line">
+                        <span class="border-end border-3 border-warning-subtle"> </span>
+                      </div>
+                      <p>
+                        Edad 18+
+                      </p>
+                    </div>
+                    <h3 class="cartelera color-base">DESCRIPCIÓN</h3>
+                    <p th:text="${proximamente.descripcion}"></p>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <footer th:replace="plantilla/template::footer"></footer>
+  </body>
+</html>

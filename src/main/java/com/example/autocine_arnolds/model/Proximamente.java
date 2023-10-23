@@ -1,5 +1,4 @@
 package com.example.autocine_arnolds.model;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,10 +6,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "cartelera")
-public class Cartelera {
 
+@Entity
+@Table(name = "proximamente")
+public class Proximamente {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,8 +28,8 @@ public class Cartelera {
     private String fecha_estreno;
     private String genero;
 
-    public Cartelera() {
-        
+    public Proximamente() {
+
     }
 
     public Long getId() {
@@ -114,7 +114,7 @@ public class Cartelera {
 
     @Override
     public String toString() {
-        return "Cartelera [id=" + id + ", titulo=" + titulo + ", imagen=" + imagen + ", descripcion=" + descripcion
+        return "Proximamente [id=" + id + ", titulo=" + titulo + ", imagen=" + imagen + ", descripcion=" + descripcion
                 + ", precio=" + precio + ", director=" + director + ", iframe_url=" + iframe_url + ", duracion="
                 + duracion + ", fecha_estreno=" + fecha_estreno + ", genero=" + genero + "]";
     }

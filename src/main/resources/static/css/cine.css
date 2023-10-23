@@ -1,0 +1,113 @@
+.titulo {
+  font-size: 2.8em;
+}
+
+.titulo-hr {
+  border-top: 4px solid #edce3b;
+  width: 50px;
+  margin-top: -8px;
+  opacity: 100;
+}
+
+.container-card {
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-rows: repeat(1, 245px);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 1em 1em;
+}
+
+.grid-cards {
+  /* margin-top: 2em; */
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* overflow: hidden; */
+  /* background-color: antiquewhite; */
+}
+
+.grid-img {
+  width: 164px;
+  height: 164px;
+  /* background-color: blue; */
+}
+
+.grid-img img {
+  width: 100%;
+  border-radius: 99%;
+}
+
+.grid-content {
+  margin-top: 0.4em;
+  /* background-color: blueviolet; */
+  max-width: 162px;
+  text-align: center;
+  /* margin: auto; */
+}
+
+.grid-cards:hover {
+  transform: scale(1.05);
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1em; */
+}
+
+.espacio-ciudad {
+  margin-top: -1em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .espacio-formato {
+    width: 90%;
+    margin: auto;
+  }
+  .container-card {
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-rows: repeat(1, 230px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 1em 1em;
+  }
+
+  .grid-cards {
+    /* margin-top: 2em; */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* overflow: hidden; */
+    /* background-color: antiquewhite; */
+  }
+
+  .grid-img {
+    width: 180px;
+    height: 180px;
+    /* background-color: blue; */
+  }
+
+  .grid-img img {
+    width: 100%;
+    border-radius: 99%;
+  }
+
+  .grid-content {
+    /* background-color: blueviolet; */
+    max-width: 162px;
+    text-align: center;
+    /* margin: auto; */
+  }
+
+  .grid-cards:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          border-radius: 1em; */
+  }
+
+  .espacio-ciudad {
+    margin-top: -1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}

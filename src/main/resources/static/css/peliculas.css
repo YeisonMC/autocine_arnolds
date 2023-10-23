@@ -1,0 +1,450 @@
+.titulo {
+  font-size: 2.8em;
+}
+
+.titulo-hr {
+  border-top: 4px solid #edce3b;
+  width: 50px;
+  margin-top: -8px;
+  opacity: 100;
+}
+
+.filtro-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-check-label {
+  margin-left: 15px;
+}
+
+.contenido {
+  /* background-color: #f4f4f4;
+  border: 1px solid #ddd; */
+  /* padding: 20px; */
+  margin-top: 10px;
+  /* border-radius: 5px; */
+}
+
+/*los reales filtros*/
+
+.dropdown-menu {
+  /* background-color: #edce3b; */
+  width: 320px;
+  /* height: 126px; */
+  padding: 1em;
+}
+.container-bottones {
+  margin-top: 1.5em;
+}
+
+#btnAplicar {
+  background-color: #edce3b;
+}
+
+.estilos-botones {
+  text-transform: uppercase;
+  /* letter-spacing: 0.1em; */
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.form-check-label {
+  margin-left: -0em;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.button-name {
+  align-items: center;
+  appearance: none;
+  /* background-color: #fcfcfd; */
+  border-radius: 1em;
+
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  /* color: #36395a; */
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.button-name:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-name:hover {
+  box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px,
+    rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-name:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* .card {
+  background-color: #edce3b;
+  width: 172px;
+} */
+/* .card img {
+  width: 100%;
+  height: 260px;
+} */
+
+.containers {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  /* margin: auto; */
+  /* background-color: #edce3b; */
+}
+
+.cards {
+  /* background-color: #fff; */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; */
+  /* width: calc(20% - 20px);  20% para 5 columnas */
+  /* margin: 2px; */
+
+  /* padding: 20px; */
+  padding: 0.6em 0em 0em 0em;
+  transition: transform 0.2s;
+}
+
+.card-content-p {
+  /* background-color: #b49e2c; */
+  max-width: 148px;
+  text-align: center;
+  margin: auto;
+}
+
+.cards p {
+  /* background-color: #b49e2c; */
+  margin-top: 0.6em;
+  text-align: center;
+  color: rgb(145, 145, 145);
+  font-size: 15px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.car-img {
+  width: 172px;
+  height: 260px;
+}
+
+.car-img img {
+  /* max-width: 100%;
+  height: auto; */
+  width: 172px;
+  height: 260px;
+  border-radius: 0.5em;
+}
+
+.cards {
+  transition: transform 0.4s ease;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+}
+
+.button2 {
+  border: 2px solid var(--color-botton);
+  background-color: var(--color-botton);
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
+
+.button2 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+.button2:hover {
+  background-color: #b49e2c;
+}
+
+.espacio-boton {
+  margin-left: 1.2em;
+}
+
+.botton-crear {
+  border: none;
+  outline: none;
+  background-color: var(--color-botton);
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #e0c01d;
+}
+
+.botton-crear:hover {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #e0c01d;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.8em;
+  }
+
+  .titulo-hr {
+    border-top: 4px solid #edce3b;
+    width: 50px;
+    margin-top: -8px;
+    opacity: 100;
+  }
+
+  .container-inicial-titulo {
+    margin: 1em 0em 0em 0em;
+  }
+
+  .filtro-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-check-label {
+    margin-left: 15px;
+  }
+
+  .contenido {
+    /* background-color: #f4f4f4;
+    border: 1px solid #ddd; */
+    /* padding: 20px; */
+    margin-top: 10px;
+
+    /* border-radius: 5px; */
+  }
+
+  /*los reales filtros*/
+
+  .dropdown-menu {
+    /* background-color: #edce3b; */
+    width: 320px;
+    /* height: 126px; */
+    padding: 1em;
+  }
+  .container-bottones {
+    margin-top: 1.5em;
+  }
+
+  #btnAplicar {
+    background-color: #edce3b;
+  }
+
+  .estilos-botones {
+    text-transform: uppercase;
+    /* letter-spacing: 0.1em; */
+    font-size: 14px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+  }
+
+  .form-check-label {
+    margin-left: -0em;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+  }
+
+  .button-name {
+    align-items: center;
+    appearance: none;
+    /* background-color: #fcfcfd; */
+    border-radius: 1em;
+
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,
+      rgba(45, 35, 66, 0.15) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    /* color: #36395a; */
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  }
+
+  .button-name:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+
+  .button-name:hover {
+    box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px,
+      rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  .button-name:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  /* .card {
+    background-color: #edce3b;
+    width: 172px;
+  } */
+  /* .card img {
+    width: 100%;
+    height: 260px;
+  } */
+
+  .containers {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    /* margin: auto; */
+    /* background-color: #edce3b; */
+  }
+
+  .cards {
+    /* background-color: #fff; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; */
+    /* width: calc(20% - 20px);  20% para 5 columnas */
+    /* margin: 2px; */
+
+    /* padding: 20px; */
+    padding: 0.6em 0em 0em 0em;
+    transition: transform 0.2s;
+  }
+
+  .card-content-p {
+    /* background-color: #b49e2c; */
+    max-width: 148px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .cards p {
+    /* background-color: #b49e2c; */
+    margin-top: 0.6em;
+    text-align: center;
+    color: rgb(145, 145, 145);
+    font-size: 15px;
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .car-img {
+    width: 172px;
+    height: 260px;
+  }
+
+  .car-img img {
+    /* max-width: 100%;
+    height: auto; */
+    width: 172px;
+    height: 260px;
+    border-radius: 0.5em;
+  }
+
+  .cards {
+    transition: transform 0.4s ease;
+  }
+
+  .cards:hover {
+    transform: scale(1.05);
+  }
+
+  .button2 {
+    border: 2px solid var(--color-botton);
+    background-color: var(--color-botton);
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+  }
+
+  .button2 span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .button2:hover {
+    background-color: #b49e2c;
+  }
+
+  .espacio-boton {
+    margin-left: 1.2em;
+  }
+
+  .botton-crear {
+    border: none;
+    outline: none;
+    background-color: var(--color-botton);
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px #e0c01d;
+  }
+
+  .botton-crear:hover {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px #e0c01d;
+  }
+}

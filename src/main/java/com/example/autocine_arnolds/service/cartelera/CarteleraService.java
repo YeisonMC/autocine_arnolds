@@ -11,3 +11,4 @@ public interface CarteleraService {
     Cartelera buscarCarteleraId(Long id);
     void eliminarCarteleraId(Long id);
 }
+  
