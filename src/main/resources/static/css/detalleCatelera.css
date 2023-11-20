@@ -31,7 +31,12 @@
   margin-top: -0.3em;
 }
 
-.container-columna1-flex img {
+/* .container-columna1-flex img {
+  width: 286px; 
+  height: 424px;
+  border-radius: 0.7em;
+} */
+.pruebas-container-flex {
   width: 286px;
   height: 424px;
   border-radius: 0.7em;

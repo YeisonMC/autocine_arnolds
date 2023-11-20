@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title  th:text=" 'Arnolds | ' +${nombreCine}"></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/cineDetalles.css" />
+    <script src="/js/modelCien.js"></script>
+    <link rel="shortcut icon" href="/img/icon-pagina.ico" />
+  </head>
+  <body>
+    <header th:replace="plantilla/template::header"></header>
+    <div class="background-cine custom-center">
+      <div
+        class="card-body flex-banner"
+        th:each="listarCine : ${listarCine}"
+        th:if="${listarCine.id eq id}"
+      >
+        <img th:src="${listarCine.imagen}" alt="" class="image-banner" />
+        <div class="contenido-banner">
+          <h1 th:text="${listarCine.nombre}">Cine Yelmo Plaza Mayor</h1>
+          <p th:text="${listarCine.referencia}">Málaga</p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!-- <div class="gola"  th:each="listarCarrito : ${listarCarrito}">
+      <p th:text="${listarCarrito.titulo}"></p>
+
+    </div> -->
+    <nav class="espacio-formato">
+      <div
+        class="row row-cols-1 row-cols-md-3 g-4"
+        th:each="listarCine : ${listarCine}"
+        th:if="${listarCine.id eq id}"
+      >
+        <div class="col text-lg-center">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="uil uil-map-marker fontsize-icon"></i>
+              <h5 class="card-title">DIRECCIÓN</h5>
+              <p class="card-text" th:text="${listarCine.direccion}">
+                Avda. Alfonso Ponce De Leon 29004 Málaga
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col text-lg-center">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="uil uil-estate fontsize-icon"></i>
+              <h5 class="card-title">CONTACTO</h5>
+              <p class="card-text" th:text="${listarCine.contacto}">
+                902902103
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col text-lg-center">
+          <div class="card h-100">
+            <div class="card-body">
+              <i class="uil uil-social-distancing fontsize-icon"></i>
+              <h5 class="card-title">CAPACIDAD</h5>
+              <p
+                class="card-text"
+                th:text="${listarCine.capacidad} + ' Butacas'"
+              >
+                4918 Butacas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </nav>
+    <nav class="contatiner-nav-peliculas">
+      <div class="espacio-formato">
+        <h1>Peliculas</h1>
+        <div
+          class="card card-prueba mb-3"
+          th:each="listarCatelera : ${listarCatelera}"
+        >
+          <div class="row g-0">
+            <div class="col-md-4 container-nav-peliculas-img">
+              <img th:src="${listarCatelera.imagen}" alt="..." />
+            </div>
+            <div class="col-md-8 card-prueb">
+              <div class="card-body">
+                <div class="d-flex">
+                  <h5 class="card-title" th:text="${listarCatelera.titulo}">
+                  </h5>
+                  <a href="#" class="icon-informacion" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">
+                  <!-- <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-x">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" th:text="${listarCatelera.titulo}" style="color: black;">
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <main class="container">
+              <section class="model-container">
+                  <img
+                  th:src="${listarCatelera.imagen}"
+                    alt=""
+                    class="img-fluid pruebas-container-flex"
+                  />
+              
+                  <h3 class="cartelera color-base model-container-h3-des" >DESCRIPCIÓN</h3>
+                  <p th:text="${listarCatelera.descripcion}" class="model-container-h3" ></p>
+              </section>
+            </main>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cerrar 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+                    <div class="d-flex">
+                      <i class="uil uil-exclamation-circle color-icon"></i>
+                      <p class="color-icon espacio-icon">Informacion</p>
+                    </div>
+                  </a>
+                  
+                </div>
+                <div class="d-flex">
+                  <p th:text="${listarCatelera.duracion}" class="espacio-dramas2"></p>
+                  <div class="line">
+                    <span class="border-end border-3 border-warning-subtle"> </span>
+                  </div>
+                  <p th:text="${listarCatelera.genero}" class="espacio-dramas">
+                    Drama
+                  </p>
+                  <div class="line">
+                    <span class="border-end border-3 border-warning-subtle"> </span>
+                  </div>
+                  <p class="espacio-dramas">     
+                    Edad 18+
+                  </p>
+                </div>
+                
+              </div>
+                <!-- <p class="card-text">165 min Acción Edad 7</p> -->
+              </div>
+            </div>
+            <hr class="seperador-peliculas" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <footer th:replace="plantilla/template::footer"></footer>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+.basic {
+  background-color: aqua;
+}
+
+.background-cine {
+  background-image: url("https://cine.entradas.com/images/placeholder/cinema-hero/fallback-light.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 2em 25%;
+}
+
+.image-banner {
+  border-radius: 99.99%;
+}
+
+.espacio-formato2 {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: aqua;
+  /* width: 50%;
+      margin: auto; */
+  /* background-color: #edce3b; */
+}
+
+.flex-banner {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.basic {
+}
+
+.contatiner-nav-peliculas {
+  background-color: #f0f0f1;
+  padding: 1em 0em;
+}
+.container-nav-peliculas-img {
+  width: 112px;
+  height: 166px;
+}
+
+.container-nav-peliculas-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6em;
+}
+
+.card-prueba {
+  border: none;
+  border-radius: 0;
+  background-color: #f0f0f1;
+  margin-top: 0.8em;
+}
+
+.seperador-peliculas {
+  color: rgb(180, 180, 180);
+  margin: 1.6em 0em;
+}
+
+.icon-informacion {
+  /* background-color: aqua; */
+  /* margin-right: 10em; */
+  margin-left: 2em;
+}
+
+.fontsize-icon {
+  font-size: 1.5em;
+}
+.color-icon {
+  /* font-size: 2em; */
+  color: black;
+}
+.espacio-icon {
+  margin-left: 0.7em;
+}
+
+.espacio-dramas {
+  /* background-color: aqua; */
+  margin: 0em 0.2em;
+}
+.espacio-dramas2 {
+  /* background-color: aqua; */
+  margin-right: 0.2em;
+}
+
+.model-container-h3 {
+  color: black;
+}
+
+.model-container-h3-des {
+  margin-top: 1em;
+}

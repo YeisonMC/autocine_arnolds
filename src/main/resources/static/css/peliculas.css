@@ -29,6 +29,19 @@
 
 /*los reales filtros*/
 
+.cartelera {
+  margin-top: 1em;
+}
+.cartelera-hr {
+  /* flex: 1; */
+  height: 4px;
+  background-color: #d9d9d9;
+  color: #d9d9d9;
+  opacity: 100;
+  border: none;
+  margin-top: 0em;
+}
+
 .dropdown-menu {
   /* background-color: #edce3b; */
   width: 320px;
@@ -122,8 +135,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+
   /* margin: auto; */
   /* background-color: #edce3b; */
+}
+
+button.botton-crear {
+  margin-bottom: 0.7em;
 }
 
 .cards {
@@ -143,6 +161,7 @@
   max-width: 148px;
   text-align: center;
   margin: auto;
+  height: 58px;
 }
 
 .cards p {

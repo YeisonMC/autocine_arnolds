@@ -241,16 +241,12 @@
           style="display: none"
         >
           <!-- <p>Este es el contenido de la administrador.</p> -->
-
-          <a th:href="@{/pages/subpaginas/create}">
-            <button class="botton-crear">Crear</button>
+          <h2 class="cartelera color-base elemento-busqueda">Cartelera</h2>
+          <hr class="cartelera-hr" />
+          <a th:href="@{/pages/subpaginas/create}" class="button-crear">
+            <button class="botton-crear">Agregar</button>
           </a>
-          <br />
-          <br />
-          <!-- <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknHdFtxrAqlOEPinfV0sFgzKqhc8fVHIYuTSL8_HEuMspl_VGCubBJDbbtXTvIKS1JVI&usqp=CAU"
-            alt=""
-          /> -->
+
           <div class="containers">
             <div th:each="listarCatelera : ${listarCatelera}" class="cards">
               <a>
@@ -270,21 +266,30 @@
                 <a
                   class="btn btn-danger espacio-boton"
                   th:href="@{/pages/subpaginas/delete/} + ${listarCatelera.id}"
-                  th:text="Elimnar"
-                  title="Elimnar"
+                  th:text="Eliminar"
+                  title="Eliminar"
                 ></a>
               </a>
             </div>
           </div>
-          <!-- <div class="containers">
+          <br />
+          <h2 class="cartelera color-base elemento-busqueda">Proximamente</h2>
+          <hr class="cartelera-hr" />
+          <a
+            th:href="@{/pages/subpaginas/create/proximamente/}"
+            class="button-crear"
+          >
+            <button class="botton-crear">Agregar</button>
+          </a>
+          <div class="containers">
             <div
               th:each="listarProximamente : ${listarProximamente}"
               class="cards"
             >
               <a
                 th:href="@{/pages/proximamente/{id}(id=${listarProximamente.id})}"
+                class="prueb"
               >
-        
                 <div class="car-img">
                   <img
                     th:src="${listarProximamente.imagen}"
@@ -294,9 +299,21 @@
                 <div class="card-content-p">
                   <p th:text="${listarProximamente.titulo}"></p>
                 </div>
+                <a
+                  class="btn btn-success"
+                  th:href="@{/pages/subpaginas/edit/} + ${listarProximamente.id}"
+                  th:text="Editar"
+                  title="Editar Registro"
+                ></a>
+                <a
+                  class="btn btn-danger espacio-boton"
+                  th:href="@{/pages/subpaginas/delete/proximamente/} + ${listarProximamente.id}"
+                  th:text="Eliminar"
+                  title="Eliminar"
+                ></a>
               </a>
             </div>
-          </div> -->
+          </div>
         </div>
 
         <div class="container-botton"></div>

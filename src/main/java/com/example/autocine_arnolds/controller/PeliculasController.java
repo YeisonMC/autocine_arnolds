@@ -1,6 +1,5 @@
 package com.example.autocine_arnolds.controller;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -55,16 +54,22 @@ public class PeliculasController {
     model.addAttribute("listarProximamente", listarProximamente);
 
       return "/pages/subpaginas/peliculas";
-    }
-
+    } 
+  
     @GetMapping("/create")
     public String crearCartelera(Model model){
       
       Cartelera cartelera = new Cartelera();
+      // Proximamente proximamente = new Proximamente();
+
       List<Cartelera> listarCatelera = carteleraService.listarCatelera();
+      // List<Proximamente> listarProximamente = proximamenteService.listarProximamente();
 
       model.addAttribute("cartelera", cartelera);
       model.addAttribute("listarCatelera", listarCatelera);
+
+      // model.addAttribute("proximamente", proximamente);
+      // model.addAttribute("listarProximamente", listarProximamente);
 
       return "/pages/subpaginas/peliculasFrm";
     }
@@ -72,24 +77,38 @@ public class PeliculasController {
     @PostMapping("/save")
     public String guardarCartelera(@ModelAttribute Cartelera cartelera){
       carteleraService.guardarCartelera(cartelera);
+      // proximamenteService.guardarProximamente(proximamente);
+
       System.out.println("Registro guardado");
       return "redirect:/pages/subpaginas/peliculas";
     }
  
     @GetMapping("/edit/{id}")
     public String editarCartelera(@PathVariable("id")Long idcartelera, Model model){
-        Cartelera cartelera = carteleraService.buscarCarteleraId(idcartelera);
 
-        model.addAttribute("nombrePelicula", cartelera.getTitulo());
-        model.addAttribute("cartelera", cartelera);
-        System.out.println("Registro editado");
-        return "/pages/subpaginas/peliculasFrm";
+      Cartelera cartelera = carteleraService.buscarCarteleraId(idcartelera);
+      // Proximamente proximamente = proximamenteService.buscarProximamente(idproximamente);
+
+      model.addAttribute("nombrePelicula", cartelera.getTitulo());
+      model.addAttribute("cartelera", cartelera);
+      // model.addAttribute("proximamente", proximamente);
+      System.out.println("Registro editado");
+      return "/pages/subpaginas/peliculasFrm";
     }
 
     @GetMapping("/delete/{id}")
     public String eliminarCartelera(@PathVariable("id")Long idcartelera){
-        carteleraService.eliminarCarteleraId(idcartelera);
-        System.out.println("Registro Eliminado");
-        return "redirect:/pages/subpaginas/peliculas";
+      carteleraService.eliminarCarteleraId(idcartelera);
+
+      System.out.println("Registro Eliminado");
+      return "redirect:/pages/subpaginas/peliculas";
+    }
+
+    @GetMapping("/delete/proximamente/{id}")
+    public String eliminarProximamente(@PathVariable("id")Long idProximamente){
+      proximamenteService.eliminarProximamente(idProximamente);
+
+      System.out.println("Registro Eliminado");
+      return "redirect:/pages/subpaginas/peliculas";
     }
 }

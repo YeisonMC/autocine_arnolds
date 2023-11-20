@@ -9,7 +9,7 @@ import com.example.autocine_arnolds.repository.CarteleraRepository;
 
 @Service
 public class CarteleraServiceImpl implements CarteleraService{
-    
+     
     @Autowired
     private CarteleraRepository carteleraRepository;
 

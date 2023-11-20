@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.autocine_arnolds.model.Carrito;
 import com.example.autocine_arnolds.model.Proximamente;
+import com.example.autocine_arnolds.service.carrito.CarritoService;
 import com.example.autocine_arnolds.service.proximamente.ProximamenteService;
 
 
@@ -17,6 +19,10 @@ import com.example.autocine_arnolds.service.proximamente.ProximamenteService;
 public class ProximamenteController {
     @Autowired
     ProximamenteService proximamenteService;
+
+    @Autowired
+    CarritoService carritoService;
+
  
     @GetMapping("/")
     public String listarProximamente(Model model) {
@@ -28,7 +34,10 @@ public class ProximamenteController {
     @GetMapping("/{id}")
     public String verDetallesProximamente(@PathVariable("id") Long id, Model model) {
         Proximamente proximamente = proximamenteService.buscarProximamente(id);
+        List<Carrito> listarCarrito = carritoService.listaCarritos();
+        
         model.addAttribute("proximamente", proximamente);
+        model.addAttribute("listarCarrito", listarCarrito);
         model.addAttribute("nombrePelicula", proximamente.getTitulo());
         return "/pages/proximamente/detalleProximamente"; // Esta vista mostrará los detalles de la película próximamente
     }

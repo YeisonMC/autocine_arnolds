@@ -2,53 +2,93 @@
 /****************************** HEADER *****************************************/
 /*******************************************************************************/
 
-#carrusel {
-  width: 82%; /* Ajusta el ancho del carrusel según tus necesidades */
-  margin: 1em 0; /* Centra el carrusel horizontalmente */
+/* Estilo del contenedor del carrusel */
+.carrusel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-top: 1em;
 }
 
-.product {
-  /* margin: 10px; Agrega márgenes alrededor de cada imagen */
+.carrusel {
+  display: flex;
+  /* gap: 1em; */
+  transition: transform 0.5s;
 }
 
-.left-arrow,
-.right-arrow {
+.carrusel-item {
+  min-width: 20%;
+  overflow: hidden;
+}
+
+.carrusel-content img {
+  border-radius: 0.6em;
+  width: 176px;
+  height: 264px;
+}
+
+.carrusel-prev,
+.carrusel-next {
+  cursor: pointer;
   position: absolute;
-  top: 27%; /* Centra verticalmente las flechas */
-  transform: translateY(-50%); /* Alinea verticalmente las flechas */
-}
-.icon-flecha {
-  width: 30px;
-  height: 30px;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.left-arrow {
-  left: 18%; /* Coloca la flecha izquierda a 10px del borde izquierdo */
+.carrusel-prev {
+  left: 0;
 }
 
-.right-arrow {
-  right: 29%; /* Coloca la flecha derecha a 10px del borde derecho */
+.carrusel-next {
+  right: 0;
 }
 
-.carrusel img {
-  width: 179px;
-  height: 268px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.3em;
-  margin-bottom: 0.7em;
+.arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(31, 39, 101);
+  border-radius: 50%;
 }
 
+.arrow-circle img {
+  color: white;
+  width: 20px;
+}
+
+@media (max-width: 768px) {
+  .carrusel-container {
+    width: 95%;
+    /* overflow: scroll; */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+  }
+
+  .carrusel {
+    display: flex;
+    gap: 0.5em;
+    transition: transform 0.5s;
+  }
+  .carrusel-item {
+    min-width: 40%;
+    overflow: hidden;
+  }
+}
 .carrusel-titulo {
+  margin-top: 0.2em;
   text-align: center;
-  font-size: 15px;
+  color: grey;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  width: 172px;
 }
 
-.propaganda {
-  width: 940px;
-  max-width: 100%;
-  height: auto;
-}
+/**/
 
 .title-line {
   display: flex;

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text=" 'Arnolds | ' +${nombrePelicula}"> </title>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="/js/card.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -31,7 +38,9 @@
     />
     <link rel="stylesheet" href="/css/all.css" />
     <link rel="stylesheet" href="/css/detalleCatelera.css" />
+    <link rel="stylesheet" href="/css/carrito.css" />
     <script src="/js/video.js"></script>
+    <script src="/js/model.js"></script>
     <link rel="shortcut icon" href="/img/icon-pagina.ico" />
   </head>
   <body>
@@ -44,49 +53,136 @@
       <div class="row">
         <div class="col-md-12 columa1">
             <div class="container-columna1">
-                  <div class="flex">
-                      <div class="container-columna1-flex">
+                  <div class="flex"> 
+                      <div class="">
                           <img
                           th:src="${proximamente.imagen}"
                             alt=""
-                            class="img-fluid"
+                            class="img-fluid pruebas-container-flex"
                           />
                           <div class="d-flex justify-content-center p-2 container-botton">
-                              <button class="button"> <i class="fas fa-ticket-alt "></i> Entradas</button>
-                              <button id="open-video" class="button2 espacio-botton"> <i class="fas fa-play"></i> Trailer</button>
-                              <div id="video-popup" class="popup">
-                                <div class="popup-content">
-                                  <span id="close-video" class="close-popup">&times;</span>
-                                  <iframe
-                                    id="video-iframe"
-                                    th:src="${proximamente.iframe_url}"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen
-                                  ></iframe>
-                                </div>
-                              </div>
-                             
-                           </div>
-                           <br>
-                          <div class="pruenas">
-                            <p class="proximamente cartelera color-base">INFORMACIÓN:</p>
-                            <div class="container-informacion">
-                              <p class="informacion-titulo">DIRECTOR/A</p>
-                              <p class="informacion-p" th:text="${proximamente.director}"></p>
-                              <p class="informacion-titulo">DURACIÓN</p>
-                              <p class="informacion-p" th:text="${proximamente.duracion}"></p>
-                              <p class="informacion-titulo">FECHA DE ESTRENO</p>
-                              <p class="informacion-p" th:text="${proximamente.fecha_estreno}"></p>
-                              <p class="informacion-titulo">GÉNERO</p>
-                              <p class="informacion-p" th:text="${proximamente.genero}"></p>
-                             
-                            </div>
-                          </div>
-
-                      </div>
+                              <button class="button"   data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"> <i class="fas fa-ticket-alt" ></i> Entradas</button>
+                              <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Carrito de compras
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <main>
+              <div class="container-banner-model">
+                <h2 class="titulo-principal" th:text="${proximamente.titulo}"></h2>
+                <img
+                  th:src="${proximamente.imagen}"
+                  alt=""
+                  class="item"
+                />
               </div>
+              <section class="contenedor">
+                <div class="contenedor-items">
+                  <div class="item">
+                    <span class="titulo-item" th:text="${proximamente.titulo}"></span>
+                    <img
+                    th:src="${proximamente.imagen}"
+                      alt=""
+                      class="img-item"
+                    />
+                    <span class="precio-item" th:text="'S/. ' +${proximamente.precio}"></span>
+                    <button type="button" class="btn btn-success boton-item">
+                      Añadir
+                    </button>
+                    <!-- <button class="boton-item">Agregar al Carrito</button> -->
+                  </div>
+                  <div class="item"  th:each="listarCarrito : ${listarCarrito}">
+                    <span class="titulo-item" th:text="${listarCarrito.titulo}">English Horse</span>
+                    <img th:src="${listarCarrito.imagen}" alt="" class="img-item" />
+                    <span class="precio-item" th:text="${listarCarrito.precio}">S/.25.00</span>
+                    <button type="button" class="btn btn-success boton-item">
+                      Añadir
+                    </button>
+                  </div>
+                  
+                </div>
+                <div class="carrito" id="carrito">
+                  <div class="header-carrito">
+                    <h2>Tu Carrito</h2>
+                  </div>
+                  <div class="carrito-items"></div>
+                  <div class="carrito-total">
+                    <div class="fila">
+                      <strong>Tu Total</strong>
+                      <span class="carrito-precio-total"> S/.120.000 </span>
+                    </div>
+                    <button class="btn-pagar">
+                      Pagar <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cerrar 
+            </button>
+            <button type="button" class="btn btn-primary">Guarda y salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+              <button id="open-video" class="button2 espacio-botton"> <i class="fas fa-play"></i> Trailer</button>
+              <div id="video-popup" class="popup">
+                <div class="popup-content">
+                  <span id="close-video" class="close-popup">&times;</span>
+                  <iframe
+                    id="video-iframe"
+                    th:src="${proximamente.iframe_url}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              
+            </div>
+            <br>
+          <div class="pruenas">
+            <p class="proximamente cartelera color-base">INFORMACIÓN:</p>
+            <div class="container-informacion">
+              <p class="informacion-titulo">DIRECTOR/A</p>
+              <p class="informacion-p" th:text="${proximamente.director}"></p>
+              <p class="informacion-titulo">DURACIÓN</p>
+              <p class="informacion-p" th:text="${proximamente.duracion}"></p>
+              <p class="informacion-titulo">FECHA DE ESTRENO</p>
+              <p class="informacion-p" th:text="${proximamente.fecha_estreno}"></p>
+              <p class="informacion-titulo">GÉNERO</p>
+              <p class="informacion-p" th:text="${proximamente.genero}"></p>
+              
+            </div>
+          </div>
+
+      </div>
+          </div>
           </div>
           <div class="container-columna2 ">
               <h2 th:text="${proximamente.titulo}" class="titulo-pelicula"></h2>
@@ -112,6 +208,7 @@
         </div>
       </div>
     </nav>
+    <br>
     <footer th:replace="plantilla/template::footer"></footer>
   </body>
 </html>

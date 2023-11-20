@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/all.css" />
     <link rel="stylesheet" href="/css/cine.css" />
     <link rel="shortcut icon" href="/img/icon-pagina.ico" />
+    <script src="/js/cines.js"></script>
   </head>
   <body>
     <header th:replace="plantilla/template::header"></header>
@@ -32,7 +33,149 @@
         <hr class="mb-0 titulo-hr" />
       </div>
       <br />
-      <div class="container-card">
+      <div class="containess">
+        <div class="dropdown filtro-dropdown">
+          <button
+            class="estilos-boton-filtro dropdown-toggle button-name"
+            role="button"
+            type="button"
+            id="dropdownFiltro"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Filtro
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownFiltro">
+            <li>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="chkCartelera"
+                  name="grupoFiltro"
+                />
+                <label class="form-check-label" for="chkCartelera">Lima</label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="chkProximamente"
+                  name="grupoFiltro"
+                />
+                <label class="form-check-label" for="chkProximamente"
+                  >Arequipa</label
+                >
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="chkAdministrador"
+                  name="grupoFiltro"
+                />
+                <label class="form-check-label" for="chkAdministrador"
+                  >Administrador</label
+                >
+              </div>
+            </li>
+            <li class="divider"></li>
+            <div class="d-flex container-bottones justify-content-between">
+              <li>
+                <button
+                  id="btnEliminarFiltro"
+                  class="btn btn-outline-secondary estilos-botones"
+                >
+                  ELIMINAR
+                </button>
+              </li>
+              <li>
+                <button id="btnAplicar" class="btn estilos-botones">
+                  Aplicar
+                </button>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- ***************** CONTENIDO GENERAL ***************** -->
+
+      <div class="contenido" id="contenidoFiltro">
+        <!-- <p>Este es el contenido de la general.</p> -->
+        <div class="container-card">
+          <div th:each="listarCine : ${listarCine}" class="grid-cards">
+            <a th:href="@{/pages/cines/cineDetalles/{id}(id=${listarCine.id})}">
+              <div class="grid-img">
+                <img th:src="${listarCine.imagen}" alt="" />
+              </div>
+              <div class="grid-content">
+                <p th:text="${listarCine.nombre}"></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ***************** CONTENIDO CARTELERA ***************** -->
+
+      <div class="contenido" id="contenidoCartelera" style="display: none">
+        <p>Este es el contenido de la cartelera.</p>
+      </div>
+
+      <!-- ***************** CONTENIDO PROXIMAMENTE ***************** -->
+
+      <div class="contenido" id="contenidoProximamente" style="display: none">
+        <p>Este es el contenido de la proximamente.</p>
+      </div>
+
+      <!-- ***************** CONTENIDO ADMINISTRADOR ***************** -->
+
+      <div class="contenido" id="contenidoAdministrador" style="display: none">
+        <!-- <p>Este es el contenido de la administrador.</p> -->
+        <h2 class="cartelera color-base elemento-busqueda">Cines</h2>
+        <hr class="cartelera-hr" />
+        <a th:href="@{/pages/cines/create}" class="button-crear">
+          <button class="botton-crear">Agregar</button>
+        </a>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="container-card">
+          <div th:each="listarCine : ${listarCine}" class="grid-cards">
+            <a>
+              <div class="grid-img">
+                <img th:src="${listarCine.imagen}" alt="" />
+              </div>
+              <div class="grid-content">
+                <p th:text="${listarCine.nombre}"></p>
+              </div>
+            </a>
+            <a
+              class="btn btn-success"
+              th:href="@{/pages/cines/edit/} + ${listarCine.id}"
+              th:text="Editar"
+              title="Editar Registro"
+            ></a>
+            <a
+              class="btn btn-danger espacio-boton"
+              th:href="@{/pages/cines/delete/} + ${listarCine.id}"
+              th:text="Eliminar"
+              title="Eliminar"
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="container-card">
         <div th:each="listarCine : ${listarCine}" class="grid-cards">
           <a href="#">
             <div class="grid-img">
@@ -43,9 +186,9 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
     </nav>
-
+    <br /><br /><br />
     <footer th:replace="plantilla/template::footer"></footer>
   </body>
 </html>
